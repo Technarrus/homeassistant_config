@@ -1,5 +1,5 @@
 ### КОНФИГУРАЦИИ HOME ASSISTANT и ESPHOME
-Умный дом и тестирование железа (например 3д принтеров) на базе популярной платформы автоматизации <a href="https://www.home-assistant.io/">HomeAssistant</a> и крутого аддона для интеграции устройств на ESP <a href="https://esphome.io/">ESPHome</a>
+Умный дом и тестирование железа (например 3д принтеров) на базе популярной платформы автоматизации <a href="https://www.home-assistant.io/">HomeAssistant</a> и аддона для интеграции устройств на ESP <a href="https://esphome.io/">ESPHome</a>
 
 ### ДЛЯ ЧЕГО ЭТА СТРАНИЦА:
 Выкладываю здесь рабочие конфиги для подписчиков, друзей и зрителей <a href="https://www.youtube.com/channel/UCzI016x7MItBtQCJiSWI7yA">YouTube</a> канала

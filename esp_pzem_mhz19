@@ -65,14 +65,6 @@ binary_sensor:
     device_class: motion
 
 # Example configuration entry
-# uart:
-#   tx_pin: D1
-#   rx_pin: D2
-#   baud_rate: 9600
-# # stop_bits: 1
-#   id: pzem004t
-
-# Example configuration entry
 uart:
   - id: pzem004t
     tx_pin: GPIO1
@@ -85,10 +77,12 @@ uart:
     baud_rate: 9600
 
 sensor:
+#аптайм железки
   - platform: uptime
     id: device_uptime
 #    internal: true
 
+#датчик CO2
   - platform: mhz19
     uart_id: mhz_19
     id: my_mhz19
@@ -99,11 +93,12 @@ sensor:
     update_interval: 60s
     automatic_baseline_calibration: false
 
-
+#уровень сигнала
   - platform: wifi_signal
     name: "${plug_name} WiFi"
     update_interval: 15s
 
+#мониторинг энергоснабжения
 #  - platform: pzem004t
   - platform: pzemac
     current:
@@ -117,14 +112,16 @@ sensor:
     frequency:
       name: "PZEM-004T Frequency"     
     update_interval: 15s
-    
+
+#сброс электросчетчика  
 switch:
   - platform: uart
     uart_id: pzem004t
     name: "PZEM-1 Reset Energy"
     icon: mdi:reload-alert
     data: [0x01, 0x42, 0x80, 0x11]
-    
+
+#удаленный ребут    
   - platform: restart
     name: "${plug_name} restart"
     
@@ -136,7 +133,7 @@ switch:
     on_turn_off:
       mhz19.abc_disable: my_mhz19      
     
-
+#счетчик аптайма
 text_sensor:
   - platform: template
     name: "${plug_name} uptime"
