@@ -1,0 +1,159 @@
+substitutions:
+  plug_name: esp8266pzm004
+  
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifiha
+  password: !secret passwifi
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "*************"
+    password: "****************"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret api
+
+ota:
+  password: !secret api
+  
+# Мигание светодиодом на борту
+status_led:
+    id: light_module_status
+    pin:
+      number: D0
+      inverted: false  
+
+
+#Датчики движения
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: D1  
+      inverted: false
+    name: "Garage sensor"
+    filters:
+      - delayed_off: 10000ms    
+    device_class: motion
+    
+  - platform: gpio
+    pin:
+      number: D4  
+      inverted: false
+    name: "Hallway sensor"
+    filters:
+      - delayed_off: 10000ms    
+    device_class: motion
+
+  - platform: gpio
+    pin:
+      number: D6  
+      inverted: false
+    name: "Bedroom sensor"
+    filters:
+      - delayed_off: 10000ms    
+    device_class: motion
+
+# Example configuration entry
+# uart:
+#   tx_pin: D1
+#   rx_pin: D2
+#   baud_rate: 9600
+# # stop_bits: 1
+#   id: pzem004t
+
+# Example configuration entry
+uart:
+  - id: pzem004t
+    tx_pin: GPIO1
+    rx_pin: GPIO3
+    baud_rate: 9600
+    
+  - id: mhz_19
+    tx_pin: D2
+    rx_pin: D3
+    baud_rate: 9600
+
+sensor:
+  - platform: uptime
+    id: device_uptime
+#    internal: true
+
+  - platform: mhz19
+    uart_id: mhz_19
+    id: my_mhz19
+    co2:
+      name: "MH-Z19 CO2 Value"
+    temperature:
+      name: "MH-Z19 Temperature"
+    update_interval: 60s
+    automatic_baseline_calibration: false
+
+
+  - platform: wifi_signal
+    name: "${plug_name} WiFi"
+    update_interval: 15s
+
+#  - platform: pzem004t
+  - platform: pzemac
+    current:
+      name: "PZEM-004T Current"
+    voltage:
+      name: "PZEM-004T Voltage"
+    power:
+      name: "PZEM-004T Power"
+    energy:
+      name: "PZEM-004T Energy"
+    frequency:
+      name: "PZEM-004T Frequency"     
+    update_interval: 15s
+    
+switch:
+  - platform: uart
+    uart_id: pzem004t
+    name: "PZEM-1 Reset Energy"
+    icon: mdi:reload-alert
+    data: [0x01, 0x42, 0x80, 0x11]
+    
+  - platform: restart
+    name: "${plug_name} restart"
+    
+  - platform: template
+    name: "MH-Z19 ABC"
+    optimistic: true
+    on_turn_on:
+      mhz19.abc_enable: my_mhz19
+    on_turn_off:
+      mhz19.abc_disable: my_mhz19      
+    
+
+text_sensor:
+  - platform: template
+    name: "${plug_name} uptime"
+    lambda: |-
+      uint32_t uptime = (id(device_uptime).state);
+      int minutes = (uptime % 3600) / 60;
+      int hours = (uptime % 86400) / 3600;
+      int days = uptime / 86400;
+      if (days > 0) {
+        return { (String(days) + " д." + String(hours) + " ч." + String(minutes) + " мин.").c_str() };
+      }
+      if (hours > 0) {
+        return { (String(hours) + " ч. " + String(minutes) + " мин.").c_str() };
+      } else {
+        return { (String(minutes) + " мин.").c_str() };
+      }
+    update_interval: 60s
+    icon: mdi:clock-start
+
+    
