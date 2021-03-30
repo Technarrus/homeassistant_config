@@ -56,7 +56,7 @@ ZIGBEE СТИК И УСТРОЙСТВА
 * Модуль питания 3,3в: http://got.by/50xxl0 
 
 ДАТЧИКИ
-С* ветоотражающий датчик: http://got.by/50xvpj
+* Cветоотражающий датчик: http://got.by/50xvpj
 * Датчики движения (модули): http://got.by/50xvjp
 * Датчик температуры и влажности: http://got.by/50xvtt
 
@@ -77,7 +77,7 @@ ZIGBEE СТИК И УСТРОЙСТВА
 * Набор клемм: http://got.by/45wgqn
 * Термоусадочные трубки, набор: http://got.by/4bhwuc
 
-### ВИДЕДО
+### ВИДЕО
 * <a href="https://youtu.be/zlENMWZuub8"> Видео про данный проект</a>
 * <a href="https://www.youtube.com/channel/UCzI016x7MItBtQCJiSWI7yA">Канал YouTube</a>
 * <a href=" ">-</a>
