@@ -1,0 +1,67 @@
+substitutions:
+  plug_name: имя_esp
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: nodemcuv2     (для Wemos, ModeMCU...)
+
+wifi:
+  ssid: поменять на вашу сеть
+  password: пароль сети
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp Security Fallback Hotspot"
+    password: пароль в режиме точки доступа
+
+captive_portal:
+# Enable logging
+
+logger:
+# Enable Home Assistant API
+api:
+  password: пароль API
+ota:
+  password: пароль OTA
+
+# Мигание светодиодом на борту
+ status_led:
+     id: light_module_status
+     pin:
+       number: D4
+       inverted: false    
+    
+# restart esp
+  - platform: restart
+    id: restart_controller
+    name: "имя железки Restart"    
+
+sensor:
+  - platform: uptime
+    id: device_uptime
+#    internal: true
+
+  - platform: wifi_signal
+    name: "${plug_name} WiFi"
+    update_interval: 15s
+    
+text_sensor:
+  - platform: template
+    name: "${plug_name} uptime"
+    lambda: |-
+      uint32_t uptime = (id(device_uptime).state);
+      int minutes = (uptime % 3600) / 60;
+      int hours = (uptime % 86400) / 3600;
+      int days = uptime / 86400;
+      if (days > 0) {
+        return { (String(days) + " д." + String(hours) + " ч." + String(minutes) + " мин.").c_str() };
+      }
+      if (hours > 0) {
+        return { (String(hours) + " ч. " + String(minutes) + " мин.").c_str() };
+      } else {
+        return { (String(minutes) + " мин.").c_str() };
+      }
+    update_interval: 60s
+    icon: mdi:clock-start
+
