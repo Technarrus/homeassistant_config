@@ -4,10 +4,10 @@ substitutions:
 esphome:
   name: ${plug_name}
   platform: ESP8266
-  board: nodemcuv2     (для Wemos, ModeMCU...)
+  board: nodemcuv2
 
 wifi:
-  ssid: поменять на вашу сеть
+  ssid: ваша сеть
   password: пароль сети
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
