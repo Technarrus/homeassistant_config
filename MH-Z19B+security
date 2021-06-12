@@ -1,0 +1,161 @@
+substitutions:
+  plug_name: esp_security
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifiha
+  password: !secret passwifi
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp Security Fallback Hotspot"
+    password: !secret paswapesp
+
+captive_portal:
+# Enable logging
+logger:
+# Enable Home Assistant API
+api:
+  password: !secret api
+ota:
+  password: !secret api
+
+# Мигание светодиодом на борту
+# status_led:
+#     id: light_module_status
+#     pin:
+#       number: D4
+#       inverted: false
+
+uart:
+  - id: mhz_19
+    tx_pin: GPIO1
+    rx_pin: GPIO3
+    baud_rate: 9600
+
+binary_sensor:  
+#Пожарные датчики 2 этажа    
+  - platform: gpio
+    pin:
+      number: D1  
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "smoke sensor 2 floor"
+    filters:
+      - delayed_off: 10000ms    
+    device_class: smoke
+    
+    
+#Пожарные датчики 1 этажа    
+  - platform: gpio
+    pin:
+      number: D2
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "smoke sensor 1 floor"
+    filters:
+      - delayed_off: 10000ms    
+    device_class: smoke    
+    
+#Пожарные датчики пристройка
+  - platform: gpio
+    pin:
+      number: D5  
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "smoke sensor pristroyka"
+    filters:
+      - delayed_off: 10000ms    
+    device_class: smoke
+    
+#Датчик движения гараж
+  - platform: gpio
+    pin:
+      number: D6  
+      inverted: false
+      mode: INPUT_PULLUP
+    name: "Garage sensor"
+    filters:
+      - delayed_off: 20000ms      
+    device_class: motion    
+
+switch:
+# сброс датчиков дыма
+  - platform: gpio
+    pin: D3
+    id: smoke_relay
+  - platform: template    
+    name: "Smoke Relay"
+    icon: "mdi:lock-reset"
+    turn_on_action:
+    - switch.turn_on: smoke_relay 
+    - delay: 10000ms
+    - switch.turn_off: smoke_relay
+    
+  - platform: template
+    name: "MH-Z19 ABC"
+    optimistic: true
+    on_turn_on:
+      mhz19.abc_enable: my_mhz19
+    on_turn_off:
+      mhz19.abc_disable: my_mhz19    
+    
+    
+# restart esp
+  - platform: restart
+    id: restart_controller
+    name: "ESP Security Restart"    
+
+# переключение нагрузки    
+  - platform: gpio
+    pin:
+      number: D4
+      inverted: yes 
+    name: "Power Relay" 
+
+
+sensor:
+  - platform: uptime
+    id: device_uptime
+#    internal: true
+
+  - platform: wifi_signal
+    name: "${plug_name} WiFi"
+    update_interval: 15s
+    
+  - platform: mhz19
+    uart_id: mhz_19
+    id: my_mhz19
+    co2:
+      name: "MH-Z19 CO2 Value"
+    temperature:
+      name: "MH-Z19 Temperature"
+    update_interval: 60s
+    automatic_baseline_calibration: false
+        
+    
+    
+
+text_sensor:
+  - platform: template
+    name: "${plug_name} uptime"
+    lambda: |-
+      uint32_t uptime = (id(device_uptime).state);
+      int minutes = (uptime % 3600) / 60;
+      int hours = (uptime % 86400) / 3600;
+      int days = uptime / 86400;
+      if (days > 0) {
+        return { (String(days) + " д." + String(hours) + " ч." + String(minutes) + " мин.").c_str() };
+      }
+      if (hours > 0) {
+        return { (String(hours) + " ч. " + String(minutes) + " мин.").c_str() };
+      } else {
+        return { (String(minutes) + " мин.").c_str() };
+      }
+    update_interval: 60s
+    icon: mdi:clock-start
+
