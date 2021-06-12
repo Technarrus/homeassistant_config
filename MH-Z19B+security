@@ -137,9 +137,6 @@ sensor:
     update_interval: 60s
     automatic_baseline_calibration: false
         
-    
-    
-
 text_sensor:
   - platform: template
     name: "${plug_name} uptime"
