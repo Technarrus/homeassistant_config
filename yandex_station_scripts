@@ -1,0 +1,26 @@
+  yandex_tts2:
+    alias: Будильник на 10 часов
+    sequence:
+    - service: media_player.play_media
+      entity_id: media_player.yandex_station_ff98f0295bb2023b4fa51e82
+      data:
+        media_content_id: Время 10 часов. Пора вставать!
+        media_content_type: text 
+
+  yandex_garage_sensor:
+    alias: Движение в гараже
+    sequence:
+    - service: media_player.play_media
+      entity_id: media_player.yandex_station_ff98f0295bb2023b4fa51e82
+      data:
+        media_content_id: Внимание! Движение в гараже!
+        media_content_type: text
+        
+  alice_custom_volume1:
+    sequence:
+    - service: tts.yandex_station_say
+      entity_id: media_player.yandex_station_ff98f0295bb2023b4fa51e82
+      data_template:
+        message: Внимание! Уровень ц о два выше среднего. Проветрите помещение! 
+        options:
+          volume_level: 0.5        
