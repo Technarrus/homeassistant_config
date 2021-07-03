@@ -1,5 +1,5 @@
 substitutions:
-  plug_name: esp_security
+  plug_name: esp_name
 
 esphome:
   name: ${plug_name}
@@ -7,22 +7,22 @@ esphome:
   board: nodemcuv2
 
 wifi:
-  ssid: !secret wifiha
-  password: !secret passwifi
+  ssid: имя сети
+  password: пароль сети
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Esp Security Fallback Hotspot"
-    password: !secret paswapesp
+    ssid: "Esp esp_name Fallback Hotspot"
+    password: пароль в режиме точки доступа
 
 captive_portal:
 # Enable logging
 logger:
 # Enable Home Assistant API
 api:
-  password: !secret api
+  password: ключ подключения к HA
 ota:
-  password: !secret api
+  password: пароль прошивки по радио
 
 # Мигание светодиодом на борту
 # status_led:
