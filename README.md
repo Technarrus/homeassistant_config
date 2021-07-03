@@ -18,8 +18,8 @@
 * Макетная плата: http://alii.pub/5r7k50
 * Перемычки для сборки на макетке:   http://alii.pub/5r7kau
 * Компактный тестер Richmeters 102: http://alii.pub/5r7khn
+* Паяльник 12-24В SH72: http://alii.pub/5r7ks5
 * USB паяльник: http://alii.pub/5r7kit
-* Лучший Паяльник 12-24В SH72: http://alii.pub/5r7ks5
 * Очиститель жала: http://alii.pub/5r7kvg
 * Отличный припой: http://alii.pub/5r7l3f
 * Флюс-гель для пайки SMD-компонентов: http://alii.pub/5r7l7w
