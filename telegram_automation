@@ -1,0 +1,62 @@
+    automation:   
+    
+        - id: Уведомление о вкл датчика движения в гараже          
+          alias: send_switch_on
+          initial_state: true
+          trigger:
+          - platform: state
+            entity_id: binary_sensor.garage_sensor
+            to: 'on'
+          action:
+          - service: notify.mytelegram
+            data:
+              message: "Движение в гараже - {{ states('sensor.time') }} "   
+              
+        - id: Уведомление о вкл датчика движения в коридоре
+          initial_state: true
+          trigger:
+          - platform: state
+            entity_id: binary_sensor.motion_sens_sonoff_occupancy
+            to: 'on'
+          action:
+          - service: notify.mytelegram
+            data:
+              message: "Движение в коридоре 2эт - {{ states('sensor.time') }} "  
+              
+                 
+        - id: Уведомление о срабатывании датчиков дыма 2 этажа          
+          alias: send_switch_on
+          initial_state: true
+          trigger:
+          - platform: state
+            entity_id: binary_sensor.smoke_sensor_2_floor
+            to: 'on'
+          action:
+          - service: notify.mytelegram
+            data:
+              message: "Дым на 2 этаже - {{ states('sensor.time') }} "    
+                 
+        - id: Уведомление о срабатывании датчиков дыма 1 этажа          
+          alias: send_switch_on
+          initial_state: true
+          trigger:
+          - platform: state
+            entity_id: binary_sensor.smoke_sensor_1_floor
+            to: 'on'
+          action:
+          - service: notify.mytelegram
+            data:
+              message: "Дым на 1 этаже - {{ states('sensor.time') }} "
+              
+        - id: Уведомление о срабатывании датчиков дыма в пристройке         
+          alias: send_switch_on
+          initial_state: true
+          trigger:
+          - platform: state
+            entity_id: binary_sensor.smoke_sensor_pristroyka
+            to: 'on'
+          action:
+          - service: notify.mytelegram
+            data:
+              message: "Дым в пристройке - {{ states('sensor.time') }} " 
+                     
