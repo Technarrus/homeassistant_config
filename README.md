@@ -43,13 +43,13 @@
 * USB зарядные устройства, рекомендуется от 3А: https://s.click.aliexpress.com/e/_A5Iuut
 
 ПЛАТЫ на базе ESP8266
-* Плата Wemos D1 Mini: http://alii.pub/5r7ce6
-* Плата NodeMCU: https://s.click.aliexpress.com/e/_ApLWAV
-* Модуль ESP01: http://alii.pub/5r7cni
-* Модули esp-07, esp-12: http://alii.pub/5r7cxm
+* Плата Wemos D1 Mini: https://s.click.aliexpress.com/e/_AD7j5J
+* Плата NodeMCU Amica: https://s.click.aliexpress.com/e/_A7OAJB
+* Модуль ESP01: https://s.click.aliexpress.com/e/_ABEH2h
+* Модули esp-07, esp-12: https://s.click.aliexpress.com/e/_A63t1X
 
 ZIGBEE СТИК И УСТРОЙСТВА
-* Стик до 20 устройств: http://alii.pub/5r7d8w
+* Стик до 20 устройств: https://s.click.aliexpress.com/e/_9JhAPR
 * Zigbee устройства Sonoff: http://alii.pub/5r7dcs
 * Zigbee устройства Tuya: http://alii.pub/5r7di8
 
@@ -67,7 +67,7 @@ ZIGBEE СТИК И УСТРОЙСТВА
 * Мини модули питания HLK, на разное напряжение: http://alii.pub/5r7g3r
 * Модули твердотельного реле: http://alii.pub/5r7g90
 * Модули активых реле на разное напряжение: http://alii.pub/5r7gko
-http://alii.pub/5r7hoc
+* Понижающие напряжение модули: https://s.click.aliexpress.com/e/_AoydU5
 
 КОМПОНЕНТЫ И ДАТЧИКИ
 * Быстрозажимные клеммы на платы: http://alii.pub/5r7gn7
