@@ -73,25 +73,25 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Модули твердотельного реле до 2А: https://s.click.aliexpress.com/e/_AM7IrK
 * Модули активых реле на разное напряжение: https://s.click.aliexpress.com/e/_AVYJdf
 * Понижающие напряжение модули: https://s.click.aliexpress.com/e/_AoydU5
-* Гребенки 2.54 на разный размер: https://s.click.aliexpress.com/e/_AexJMd
 * Модули с оптронами для гальванической развязки: https://s.click.aliexpress.com/e/_99hdfT
-* Разъемы быстрозажимные KF141: https://s.click.aliexpress.com/e/_AOq1I8
+
 * Разъемы KF128: https://s.click.aliexpress.com/e/_9HdxpR
 * Твердотельное реле выше 10А: https://s.click.aliexpress.com/e/_9yydhR
 * Кнопки любые на выбор: http://ali.pub/5i3at6
 
 КОМПОНЕНТЫ И ДАТЧИКИ
 * Дюпонты (провода с разъемами): https://s.click.aliexpress.com/e/_9AqDAZ
-* Быстрозажимные клеммы на платы: http://alii.pub/5r7gn7
-* Cветоотражающий датчик: http://alii.pub/5r7i0e
-* Датчики движения (модули): http://alii.pub/5r7i52
-* Датчик температуры и влажности: http://alii.pub/5r7ig5
-* Датчик темп. 18B20: http://alii.pub/5r7jin
+* Разъемы быстрозажимные KF141: https://s.click.aliexpress.com/e/_AOq1I8
+* Гребенки 2.54 на разный размер: https://s.click.aliexpress.com/e/_AexJMd
+* Cветоотражающий датчик: https://s.click.aliexpress.com/e/_9ugJqM
+* Датчики движения (модули): https://s.click.aliexpress.com/e/_Al0ojE
+* Датчик температуры и влажности: https://s.click.aliexpress.com/e/_ArHc1e
+* Датчик темп. 18B20: https://s.click.aliexpress.com/e/_AX1opI
 
 ДОП. УПРАВЛЕНИЕ
-ИК пульт управления техникой Broadlink RM Mini 3 (Доставка по России): http://alii.pub/5r7k14
+ИК пульт управления техникой Broadlink RM Mini 3: https://s.click.aliexpress.com/e/_9RldFW
 
-### КАМЕРЫ
+КАМЕРЫ
 Камера Xiaomi Mijia умная ip-камера 2K 1296P WiFi: https://s.click.aliexpress.com/e/_AknnRF
 
 ### ВИДЕО
