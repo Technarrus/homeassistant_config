@@ -1,0 +1,16 @@
+alias: Оповещение (датчик в гараже)
+description: ''
+trigger:
+  - type: motion
+    platform: device
+    device_id: c4cbe561f14b112c98017fabde3784bd
+    entity_id: binary_sensor.garage_sensor
+    domain: binary_sensor
+condition:
+  - condition: time
+    after: '23:00:00'
+    before: '06:00:00'
+action:
+  - service: script.yandex_garage_sensor
+    data: {}
+mode: single
