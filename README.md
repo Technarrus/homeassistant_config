@@ -51,31 +51,37 @@
 * Модуль ESP01: https://s.click.aliexpress.com/e/_ABEH2h
 * Модули esp-07, esp-12: https://s.click.aliexpress.com/e/_A63t1X
 
-ZIGBEE СТИК И УСТРОЙСТВА
+ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Стик до 20 устройств: https://s.click.aliexpress.com/e/_9JhAPR
-* 
+* Датчик влажности и температуры Tuya: https://s.click.aliexpress.com/e/_AoFKDI
 * Выключатели AQARA OPLE: https://s.click.aliexpress.com/e/_9fMJfj
+* Реле Sonoff ZB MINI: https://s.click.aliexpress.com/e/_9hXX3q
+* Датчик движения SONOFF SNZB-03: https://s.click.aliexpress.com/e/_Ag7UfE
 
 ВЫКЛЮЧАТЕЛИ И WiFi РЕЛЕ
-* WiFi Реле Sonoff BASIC: http://alii.pub/5r7dnv
-* WiFi Реле в подрозетники Sonoff Mini: http://alii.pub/5r7dua
+* WiFi Реле Sonoff BASIC: https://s.click.aliexpress.com/e/_AKpOOg
+* WiFi Реле в подрозетники Sonoff Mini: https://s.click.aliexpress.com/e/_ADBaCU
 * Радиовыключатели 433 315МГц, подходят к Sonoff: http://alii.pub/5r7e3t
 * Сенсорные выключатели SONOFF RF: http://alii.pub/5r7e74
 
 МОДУЛИ ДЛЯ ПРОЕКТОВ
 * Магазины: http://alii.pub/5r7fjx http://alii.pub/5r7fvs
-* Модуль контроля тока и напряжения и тока PZEM-004T: http://alii.pub/5r7f55
-* Модуль CO2 MH-Z19: http://alii.pub/5r7f9t
-* Модуль обнаружения напряжения, с гальв. развязкой: http://alii.pub/5r7fy4
-* Мини модули питания HLK, на разное напряжение: http://alii.pub/5r7g3r
-* Модули твердотельного реле: http://alii.pub/5r7g90
-* Модули активых реле на разное напряжение: http://alii.pub/5r7gko
+* Модуль контроля тока и напряжения и тока PZEM-004T: https://s.click.aliexpress.com/e/_Ap0Un2
+* Модуль CO2 MH-Z19: https://s.click.aliexpress.com/e/_9jO6PK
+* Модуль обнаружения напряжения, с гальв. развязкой: https://s.click.aliexpress.com/e/_AVpLys
+* Мини модули питания HLK, на разное напряжение: https://s.click.aliexpress.com/e/_Atv9GN
+* Модули твердотельного реле до 2А: https://s.click.aliexpress.com/e/_AM7IrK
+* Модули активых реле на разное напряжение: https://s.click.aliexpress.com/e/_AVYJdf
 * Понижающие напряжение модули: https://s.click.aliexpress.com/e/_AoydU5
 * Гребенки 2.54 на разный размер: https://s.click.aliexpress.com/e/_AexJMd
 * Модули с оптронами для гальванической развязки: https://s.click.aliexpress.com/e/_99hdfT
+* Разъемы быстрозажимные KF141: https://s.click.aliexpress.com/e/_AOq1I8
 * Разъемы KF128: https://s.click.aliexpress.com/e/_9HdxpR
+* Твердотельное реле выше 10А: https://s.click.aliexpress.com/e/_9yydhR
+* Кнопки любые на выбор: http://ali.pub/5i3at6
 
 КОМПОНЕНТЫ И ДАТЧИКИ
+* Дюпонты (провода с разъемами): https://s.click.aliexpress.com/e/_9AqDAZ
 * Быстрозажимные клеммы на платы: http://alii.pub/5r7gn7
 * Cветоотражающий датчик: http://alii.pub/5r7i0e
 * Датчики движения (модули): http://alii.pub/5r7i52
@@ -90,7 +96,7 @@ ZIGBEE СТИК И УСТРОЙСТВА
 
 ### ВИДЕО
 * <a href="https://www.youtube.com/channel/UCzI016x7MItBtQCJiSWI7yA">Канал YouTube</a>
-* <a href=" ">-</a>
+* <a href="https://www.youtube.com/playlist?list=PL8e0h2prmGn2swbuRPyUbvTy9VmHrdvnT">Все видео про Smart Home</a>
 
 ### Связь
 Вопросы, обсуждения, предложения через следующие сообщества:
