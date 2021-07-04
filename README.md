@@ -15,32 +15,36 @@
 💲Экономь на покупках до 90%: http://got.by/46pyod
 
 ### ПОЛЕЗНОЕ НАЧИНАЮЩИМ
-* Макетная плата: http://alii.pub/5r7k50
-* Перемычки для сборки на макетке:   http://alii.pub/5r7kau
-* Компактный тестер Richmeters 102: http://alii.pub/5r7khn
-* Паяльник 12-24В SH72: http://alii.pub/5r7ks5
-* USB паяльник: http://alii.pub/5r7kit
-* Очиститель жала: http://alii.pub/5r7kvg
-* Отличный припой: http://alii.pub/5r7l3f
-* Флюс-гель для пайки SMD-компонентов: http://alii.pub/5r7l7w
-* Термоклей для радиаторов: http://alii.pub/5r7lcd
-* Набор клемм: http://alii.pub/5r7llp
-* Термоусадочные трубки, набор: http://alii.pub/5r7lpl
+
+* Ступенчатые сверла 3шт, доставили СДЭКом: https://s.click.aliexpress.com/e/_9v3S1T
+* Обжимка (выбирай SN-2549 720H), там же разъемы и другие стандарты обжимок: https://s.click.aliexpress.com/e/_9Qxu7f
+* Компактный тестер, мультиметр: http://ali.pub/3zozp5
+* Очиститель жала: https://s.click.aliexpress.com/e/_9j8vul
+* Отличный припой: https://s.click.aliexpress.com/e/_ATsgjr
+* ESR meter (проверка компонентов): https://s.click.aliexpress.com/e/_AAwV6p
+* Макетная плата: https://s.click.aliexpress.com/e/_9vmIhb
+* Перемычки Dupont: https://s.click.aliexpress.com/e/_ATZPiv
+* Паяльник 12-24В SH72: https://s.click.aliexpress.com/e/_AksE3B
+* USB паяльник: https://s.click.aliexpress.com/e/_Abkq01
+* Флюс-гель: https://s.click.aliexpress.com/e/_ABiwNL
+* Термоклей для радиаторов: https://s.click.aliexpress.com/e/_9AIBcV
+* Термоусадочные трубки, набор: https://s.click.aliexpress.com/e/_A2dMTX
+* Набор клемм: https://s.click.aliexpress.com/e/_AD96Vb
 
 ### ЖЕЛЕЗО ДЛЯ SMART HOME:
 ОДНОПЛАТНИКИ:
 * Магазин: http://alii.pub/5r7bg5
-* Raspberry Pi 4, рекомендую с ОЗУ 4Гб: http://alii.pub/5r7auy
+* Raspberry Pi 4, рекомендую с ОЗУ 4Гб: https://s.click.aliexpress.com/e/_A1h35P
 * Наборы Raspberry Pi и периферия к ним: http://alii.pub/5r7bjg
-* Кейс/радиатор для RPi 4: http://alii.pub/5r7brf
+* Кейс/радиатор для RPi 4: https://s.click.aliexpress.com/e/_AnGF21
 * Платы расширения под SSD M2 и прочие: http://alii.pub/5r7bux
-* SSD (рекомендую брать у нас, но и это работает годами): http://alii.pub/5r7byt
-* Кабель, переходник SATA на USB 3.0 для SSD: http://alii.pub/5r7c3h
-* USB зарядные устройства, рекомендуется от 3А: http://alii.pub/5r7c9b
+* SSD (рекомендую брать у нас, но и это работает годами): https://s.click.aliexpress.com/e/_AW97FL
+* Кабель, переходник SATA на USB 3.0 для SSD: https://s.click.aliexpress.com/e/_AYLioZ
+* USB зарядные устройства, рекомендуется от 3А: https://s.click.aliexpress.com/e/_A5Iuut
 
 ПЛАТЫ на базе ESP8266
 * Плата Wemos D1 Mini: http://alii.pub/5r7ce6
-* Плата NodeMCU: http://alii.pub/5r7cfx
+* Плата NodeMCU: https://s.click.aliexpress.com/e/_ApLWAV
 * Модуль ESP01: http://alii.pub/5r7cni
 * Модули esp-07, esp-12: http://alii.pub/5r7cxm
 
