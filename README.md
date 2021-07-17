@@ -89,6 +89,7 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Датчик темп. 18B20: https://s.click.aliexpress.com/e/_AX1opI
 * Тензо датчик с модулем XH711: https://s.click.aliexpress.com/e/_AtDR7y
 * Датчик акселерометра MPU-5060: https://s.click.aliexpress.com/e/_9IXb6E
+* Термопара с модулем MAX6675: https://s.click.aliexpress.com/e/_AST5Ea
 
 ДОП. УПРАВЛЕНИЕ
 ИК пульт управления техникой Broadlink RM Mini 3: https://s.click.aliexpress.com/e/_9RldFW
