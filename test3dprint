@@ -1,0 +1,113 @@
+substitutions:
+  plug_name: esp-test3dprint
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: name ssid
+  password: pass_ssid
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp test3dprint Fallback Hotspot"
+    password: 
+
+captive_portal:
+# Enable logging
+logger:
+# Enable Home Assistant API
+api:
+  password: 
+ota:
+  password: 
+
+
+# Example configuration entry for ESP32
+i2c:
+  sda: GPIO4
+  scl: GPIO5
+  scan: True
+#  id: bus_a
+
+# Example configuration entry
+spi:
+  miso_pin: D6
+  clk_pin: D5
+
+
+switch:
+ 
+# restart esp
+  - platform: restart
+    id: restart_controller
+    name: "esp-test3dprint Restart"  
+
+sensor:
+  - platform: hx711
+    name: "Tenzo HX711 Value"
+    dout_pin: D3
+    clk_pin: D4
+    gain: 128
+    update_interval: 1s
+    filters:
+      - calibrate_linear:
+          - -26690 -> 0
+          - -280090 -> 1000
+    unit_of_measurement: g    
+   
+    
+
+  - platform: max6675
+    name: "Thermocouple Temperature"
+    cs_pin: D8
+    update_interval: 1s
+
+  - platform: mpu6050
+    address: 0x68
+    accel_x:
+      name: "Accel X"
+    accel_y:
+      name: "Accel Y"
+    accel_z:
+      name: "Accel z"
+    gyro_x:
+      name: "Gyro X"
+    gyro_y:
+      name: "Gyro Y"
+    gyro_z:
+      name: "Gyro z"
+    temperature:
+      name: "MPU6050 Temperature"
+    update_interval: 0.1s
+    
+
+
+  - platform: uptime
+    id: device_uptime
+#    internal: true
+
+  - platform: wifi_signal
+    name: "${plug_name} WiFi"
+    update_interval: 15s
+    
+text_sensor:
+  - platform: template
+    name: "${plug_name} uptime"
+    lambda: |-
+      uint32_t uptime = (id(device_uptime).state);
+      int minutes = (uptime % 3600) / 60;
+      int hours = (uptime % 86400) / 3600;
+      int days = uptime / 86400;
+      if (days > 0) {
+        return { (String(days) + " д." + String(hours) + " ч." + String(minutes) + " мин.").c_str() };
+      }
+      if (hours > 0) {
+        return { (String(hours) + " ч. " + String(minutes) + " мин.").c_str() };
+      } else {
+        return { (String(minutes) + " мин.").c_str() };
+      }
+    update_interval: 60s
+    icon: mdi:clock-start
