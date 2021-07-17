@@ -73,13 +73,17 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Модули твердотельного реле до 2А: https://s.click.aliexpress.com/e/_AM7IrK
 * Модули активых реле на разное напряжение: https://s.click.aliexpress.com/e/_AVYJdf
 * Понижающие напряжение модули: https://s.click.aliexpress.com/e/_AoydU5
+* Повышающий напряжение модуль: https://s.click.aliexpress.com/e/_AFVAvy
 * Модули с оптронами для гальванической развязки: https://s.click.aliexpress.com/e/_99hdfT
+* UPS Бесперебойник на 5В: https://s.click.aliexpress.com/e/_AYpbLM
+* Аккум 18650Ж https://s.click.aliexpress.com/e/_A9vtVY
+* Модуль заряда/разряда на TC4056: https://s.click.aliexpress.com/e/_9i7jaE
 
+КОМПОНЕНТЫ И ДАТЧИКИ
 * Разъемы KF128: https://s.click.aliexpress.com/e/_9HdxpR
 * Твердотельное реле выше 10А: https://s.click.aliexpress.com/e/_9yydhR
 * Кнопки любые на выбор: http://ali.pub/5i3at6
-
-КОМПОНЕНТЫ И ДАТЧИКИ
+* Штыревые разъемы разного размера для модулей: https://s.click.aliexpress.com/e/_ACxmWW
 * Дюпонты (провода с разъемами): https://s.click.aliexpress.com/e/_9AqDAZ
 * Разъемы быстрозажимные KF141: https://s.click.aliexpress.com/e/_AOq1I8
 * Гребенки 2.54 на разный размер: https://s.click.aliexpress.com/e/_AexJMd
