@@ -1,0 +1,175 @@
+substitutions:
+  plug_name: esp-hallway
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifiha
+  password: !secret passwifi
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp epfloor2 Fallback Hotspot"
+    password: !secret paswapesp
+
+captive_portal:
+# Enable logging
+logger:
+  baud_rate: 0
+# Enable Home Assistant API
+api:
+  password: !secret api
+ota:
+  password: !secret api
+
+##############################################
+
+light:
+
+#свет в спальне
+  - platform: binary
+    name: "Bedroom Lamp"
+    output: output_bedroom_lamp    
+    id: light_bedroom
+    
+#подсветка в спальне
+  - platform: binary
+    name: "Bedroom illumination"
+    output: output_bedroom_illumination    
+    id: light_bedroom_illumination
+
+#свет в restroom
+  - platform: binary
+    name: "Restroom Lamp"
+    output: output_restroom_lamp    
+    id: light_restroom
+    
+#фоновая подсветка в коридоре
+  - platform: monochromatic
+    name: "Hallway Led"
+    output: output_component_hallway_led
+    id: light_hallway_led    
+    
+##############################################    
+
+output:
+
+#пин для света в спальне   
+  - id: output_bedroom_lamp
+    platform: gpio
+    pin: D7   
+
+#пин подсветки в спальне
+  - id: output_bedroom_illumination 
+    platform: gpio
+    pin: D5       
+
+#пин света в restroom
+  - id: output_restroom_lamp 
+    platform: gpio
+    pin: D6     
+    
+#пин для фоновой подсветки в коридоре
+  - platform: esp8266_pwm
+    id: output_component_hallway_led
+    pin: D1    
+    
+###############################################    
+    
+binary_sensor:
+
+#Выключатель LED
+  - platform: gpio
+    pin:
+      number: D3
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "${plug_name} Button Bedroom Lamp"
+    filters:
+      - delayed_on: 150ms
+      - delayed_off: 150ms
+    on_press:
+      - light.toggle: light_bedroom
+#    on_release:
+#       - delay: 10s
+#       - light.turn_off: light_bedroom_lamp   
+
+#Выключатель в restroom и bedroom
+  - platform: gpio
+    pin:
+      number: D4
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "${plug_name} Button Bedroom Illumination"
+    filters:
+      - delayed_on: 150ms
+      - delayed_off: 150ms
+    on_press:
+      - light.toggle: light_bedroom_illumination   
+    
+#   - delayed_on: 150ms
+#    - delayed_off: 150ms
+#   on_press:
+#      - light.toggle: light_restroom_lamp 
+
+#Выключатель на D8 для restroom
+  - platform: gpio
+    pin:
+      number: D8
+#      mode: INPUT_PULLUP
+      inverted: true
+    name: "${plug_name} Button Restroom Lamp "
+    filters:
+      - delayed_on: 200ms
+      - delayed_off: 200ms
+    on_press:
+      - light.toggle: light_restroom
+
+#Датчик движения с включением фоновой подсветки
+  - platform: gpio
+    pin:
+      number: D2  
+      inverted: false
+      mode: INPUT_PULLUP
+    name: "Hallway sensor"
+    filters:
+      - delayed_on: 200ms
+      - delayed_off: 10s      
+    device_class: motion
+    on_press:
+      - light.turn_on: light_hallway_led
+    on_release:
+#       - delay: 10s
+       - light.turn_off: light_hallway_led 
+       
+################################################
+sensor:
+  - platform: uptime
+    id: device_uptime
+#    internal: true
+
+  - platform: wifi_signal
+    name: "${plug_name} WiFi"
+    update_interval: 15s
+
+text_sensor:
+  - platform: template
+    name: "${plug_name} uptime"
+    lambda: |-
+      uint32_t uptime = (id(device_uptime).state);
+      int minutes = (uptime % 3600) / 60;
+      int hours = (uptime % 86400) / 3600;
+      int days = uptime / 86400;
+      if (days > 0) {
+        return { (String(days) + " д." + String(hours) + " ч." + String(minutes) + " мин.").c_str() };
+      }
+      if (hours > 0) {
+        return { (String(hours) + " ч. " + String(minutes) + " мин.").c_str() };
+      } else {
+        return { (String(minutes) + " мин.").c_str() };
+      }
+    update_interval: 60s
+    icon: mdi:clock-start  
