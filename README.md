@@ -94,8 +94,11 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Тензо датчик с модулем XH711: https://s.click.aliexpress.com/e/_AtDR7y
 * Датчик акселерометра MPU-5060: https://s.click.aliexpress.com/e/_9IXb6E
 * Термопара с модулем MAX6675: https://s.click.aliexpress.com/e/_AST5Ea
-*  Мосфет IRLB3034 (эти нормальные как ни странно): https://s.click.aliexpress.com/e/_AE3ps0
+* Мосфет IRLB3034 (эти нормальные как ни странно): https://s.click.aliexpress.com/e/_AE3ps0
 * Транзистор для активного реле: https://s.click.aliexpress.com/e/_A6B5H6
+* Диоды для активного реле: https://s.click.aliexpress.com/e/_9fpbWU
+* Комплект резисторов: https://s.click.aliexpress.com/e/_As59C0
+* Комплект переменных резисторов: https://s.click.aliexpress.com/e/_Ar6V7Q
 
 ДОП. УПРАВЛЕНИЕ
 ИК пульт управления техникой Broadlink RM Mini 3: https://s.click.aliexpress.com/e/_9RldFW
