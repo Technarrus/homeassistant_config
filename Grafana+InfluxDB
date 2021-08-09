@@ -1,0 +1,21 @@
+#ПАРАМЕТРЫ БД influx
+
+  username: homeassistant
+  password: technarr
+  max_retries: 3
+  default_measurement: state
+  database: homeassistant
+  include:
+    entities:
+      - sensor.accel_x
+      - sensor.accel_y
+      - sensor.accel_z
+      - sensor.thermocouple_temperature
+      - sensor.tenzo_hx711_value_to_kg
+      - sensor.tenzo_hx711_value
+      
+      
+Прописать в настройках подключения к базе данных в  Grafana
+http://a0d7b954-influxdb:8086/      
+      
+      
