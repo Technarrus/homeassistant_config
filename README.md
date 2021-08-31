@@ -71,6 +71,7 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Модуль обнаружения напряжения, с гальв. развязкой: https://s.click.aliexpress.com/e/_AVpLys
 * Мини модули питания HLK  https://s.click.aliexpress.com/e/_Apun6u
 * Модули твердотельного реле до 2А: https://s.click.aliexpress.com/e/_AM7IrK
+* Твердотельное реле выше 10А: https://s.click.aliexpress.com/e/_9yydhR
 * Модули активых реле на разное напряжение: https://s.click.aliexpress.com/e/_AVYJdf
 * Понижающие напряжение модули: https://s.click.aliexpress.com/e/_AoydU5
 * Повышающий напряжение модуль: https://s.click.aliexpress.com/e/_AFVAvy
@@ -81,7 +82,6 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 
 КОМПОНЕНТЫ И ДАТЧИКИ
 * Разъемы KF128: https://s.click.aliexpress.com/e/_9HdxpR
-* Твердотельное реле выше 10А: https://s.click.aliexpress.com/e/_9yydhR
 * Кнопки любые на выбор: http://ali.pub/5i3at6
 * Штыревые разъемы разного размера для модулей: https://s.click.aliexpress.com/e/_ACxmWW
 * Дюпонты (провода с разъемами): https://s.click.aliexpress.com/e/_9AqDAZ
