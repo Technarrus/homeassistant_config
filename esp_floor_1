@@ -1,0 +1,141 @@
+substitutions:
+  plug_name: esp-ep-floor1
+
+esphome:
+  name: ${plug_name}
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifiha
+  password: !secret passwifi
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp epfloor1 Fallback Hotspot"
+    password: !secret paswapesp
+
+captive_portal:
+# Enable logging
+logger:
+  baud_rate: 0
+# Enable Home Assistant API
+api:
+  password: !secret api
+ota:
+  password: !secret api
+  
+################################################################  
+  
+switch:
+#restart KWT pzem
+  - platform: uart
+    uart_id: pzem004t
+    name: "PZEM-1 floor1 Reset Energy"
+    icon: mdi:reload-alert
+    data: [0x01, 0x42, 0x80, 0x11]      
+  - platform: restart
+    name: "${plug_name} restart" 
+    
+# restart esp
+  - platform: restart
+    id: restart_controller
+    name: "esp-ep-floor1 Restart"  
+    
+##############################################################
+# Example configuration entry
+uart:
+  - id: pzem004t
+    tx_pin: GPIO1
+    rx_pin: GPIO3
+    baud_rate: 9600
+    
+##############################################################
+binary_sensor:
+#Датчик открытия двери щитка
+  - platform: gpio
+    pin:
+      number: D3  
+      inverted: false
+      mode: INPUT_PULLUP
+    name: "EP sensor door"
+    filters:
+      - delayed_off: 10s      
+    device_class: door
+    
+#Датчик движения гараж
+  - platform: gpio
+    pin:
+      number: D5  
+      inverted: false
+      mode: INPUT_PULLUP
+    name: "Basement Water Sensor"
+    filters:
+      - delayed_off: 5s      
+    device_class: moisture    
+    
+    
+##############################################################
+
+dallas:
+  - pin: D1
+
+sensor:
+  - platform: dallas
+    address: 0x41011432C255C828
+    name: "Floor 1 Temperature"
+
+  - platform: dht
+    pin: D2
+    model: AM2302
+    temperature:
+      name: "Basement Temperature"
+    humidity:
+      name: "Basement Humidity"
+    update_interval: 60s
+
+    
+#  - platform: pzem004t
+  - platform: pzemac
+    current:
+      name: "PZEM-004T floor1 Current"
+    voltage:
+      name: "PZEM-004T floor1 Voltage"
+    power:
+      name: "PZEM-004T floor1 Power"
+    energy:
+      name: "PZEM-004T floor1 Energy"
+    frequency:
+      name: "PZEM-004T floor1 Frequency"     
+    update_interval: 15s
+    
+###############################################    
+    
+   
+    
+  - platform: uptime
+    id: device_uptime
+#    internal: true
+
+  - platform: wifi_signal
+    name: "${plug_name} WiFi"
+    update_interval: 15s
+    
+text_sensor:
+  - platform: template
+    name: "${plug_name} uptime"
+    lambda: |-
+      uint32_t uptime = (id(device_uptime).state);
+      int minutes = (uptime % 3600) / 60;
+      int hours = (uptime % 86400) / 3600;
+      int days = uptime / 86400;
+      if (days > 0) {
+        return { (String(days) + " д." + String(hours) + " ч." + String(minutes) + " мин.").c_str() };
+      }
+      if (hours > 0) {
+        return { (String(hours) + " ч. " + String(minutes) + " мин.").c_str() };
+      } else {
+        return { (String(minutes) + " мин.").c_str() };
+      }
+    update_interval: 60s
+    icon: mdi:clock-start
