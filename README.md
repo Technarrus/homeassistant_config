@@ -69,7 +69,7 @@ ZIGBEE СТИК И УСТРОЙСТВА ZIGBEE
 * Модуль контроля тока и напряжения и тока PZEM-004T: https://s.click.aliexpress.com/e/_Ap0Un2
 * Модуль CO2 MH-Z19: https://s.click.aliexpress.com/e/_9jO6PK
 * Модуль обнаружения напряжения, с гальв. развязкой: https://s.click.aliexpress.com/e/_AVpLys
-* Мини модули питания HLK, на разное напряжение: https://s.click.aliexpress.com/e/_Atv9GN
+* Мини модули питания HLK  https://s.click.aliexpress.com/e/_Apun6u
 * Модули твердотельного реле до 2А: https://s.click.aliexpress.com/e/_AM7IrK
 * Модули активых реле на разное напряжение: https://s.click.aliexpress.com/e/_AVYJdf
 * Понижающие напряжение модули: https://s.click.aliexpress.com/e/_AoydU5
